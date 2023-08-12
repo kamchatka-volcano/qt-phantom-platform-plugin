@@ -54,6 +54,7 @@
 
 #include <qpa/qplatformnativeinterface.h>
 #include <qpa/qplatformscreen.h>
+#include <qpa/qwindowsysteminterface.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -102,7 +103,7 @@ PhantomIntegration::PhantomIntegration()
     screen->setDepth(32);
     screen->setFormat(QImage::Format_ARGB32_Premultiplied);
 
-    screenAdded(screen);
+    QWindowSystemInterface::handleScreenAdded(screen);
 }
 
 PhantomIntegration::~PhantomIntegration()
